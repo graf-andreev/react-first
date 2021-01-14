@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Wow level up",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "game": "WoW",
+    "price": "100$",
+    "oldprice": "50$",
+    "image": "https://games.mail.ru/hotbox/content_files/gallery/2019/09/17/a7e9b2c44478431fa281e914ec022998.jpg",
+    "counter": "1001",
+    "additional": [
+      {
+        "name": "Add selfplay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "10$",
+        "oldprice": "5$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Pubg top 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "game": "PUBG",
+    "price": "100$",
+    "oldprice": "50$",
+    "image": "https://www.ixbt.com/img/n1/news/2020/8/1/pubg-mobile_large.png",
+    "counter": "100",
+    "additional": [
+      {
+        "name": "Add selfplay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "10$",
+        "oldprice": "5$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Apex new weapon",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "game": "Apex",
+    "price": "100$",
+    "oldprice": "50$",
+    "image": "https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/10/season-7-landing-page/apex-featured-image-season-7.jpg.adapt.crop191x100.1200w.jpg",
+    "counter": "5000",
+    "additional": [
+      {
+        "name": "Add selfplay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "10$",
+        "oldprice": "5$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "escape from Tarkov берем топ 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "game": "Tarkov",
+    "price": "100$",
+    "oldprice": "50$",
+    "image": "https://www.escapefromtarkov.com/uploads/content/news/content_thumb_df618b1e249d381360dae09fe7dae2f0.jpg?ru",
+    "counter": "10",
+    "additional": [
+      {
+        "name": "Add selfplay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "10$",
+        "oldprice": "5$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "CS go обучение",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "game": "CS: GO",
+    "price": "100$",
+    "oldprice": "50$",
+    "image": "https://img.championat.com/c/1200x675/news/big/j/v/ishodnyj-kod-cs-go-popal-v-otkrytyj-dostup_1587630425839973076.jpg",
+    "counter": "1010",
+    "additional": [
+      {
+        "name": "Add selfplay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "10$",
+        "oldprice": "5$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
+      }
+    ]
+  }
+]
