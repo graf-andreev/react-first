@@ -5,7 +5,7 @@ import Item from "./Item";
 
 class OfferList extends React.Component{
   render() {
-    return offerList.map(user => <Item key={name} user={user} />)
+    return offerList.map(user => <Item key={user.name} user={user} />)
   }
 }
 
