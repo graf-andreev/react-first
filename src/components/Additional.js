@@ -4,10 +4,15 @@ import additional from '../data/offerList.json';
 
 class Additional extends React.Component{
   render() {
-    const {name} = this.props;
+    const {name, description, price, oldprice} = this.props;
     
     return (
+      <>
       <p>{name}</p>
+      <p>{description}</p>
+      <p>{price}</p>
+      <p>{oldprice}</p>
+      </>
     )
   }
 }
