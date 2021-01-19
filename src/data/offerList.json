@@ -20,6 +20,18 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
         "price": "30$",
         "oldprice": "33$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
+      },
+      {
+        "name": "Add 1-80 level",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "price": "30$",
+        "oldprice": "33$"
       }
     ]
   },

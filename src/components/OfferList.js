@@ -8,5 +8,4 @@ class OfferList extends React.Component{
     return offerList.map(user => <Item key={user.name} user={user} />)
   }
 }
-
 export default OfferList;

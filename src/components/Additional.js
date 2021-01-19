@@ -1,17 +1,14 @@
 import React from 'react';
 
-import additional from '../data/offerList.json';
-
 class Additional extends React.Component{
   render() {
     const {name, description, price, oldprice} = this.props;
-    
     return (
       <>
-      <p>{name}</p>
-      <p>{description}</p>
-      <p>{price}</p>
-      <p>{oldprice}</p>
+      <p className="additional-item">{name}</p>
+      <p className="additional-item">{description}</p>
+      <p className="additional-item">{price}</p>
+      <p className="additional-item">{oldprice}</p>
       </>
     )
   }

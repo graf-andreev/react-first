@@ -1,19 +1,9 @@
 import React from 'react';
 import Additional from './Additional';
 
-const style = {
-  hide: {
-    display: 'none',
-  },
-  opened: {
-    background: 'red'
-  }
-};
-
 class Item extends React.Component{
   constructor(props){
     super(props);
-
     this.state = {isShow: true};
   }
 
@@ -23,7 +13,13 @@ class Item extends React.Component{
     }));
   }
 
-  
+  showMore(){
+    this.setState(prevState => ({
+      isShow: !prevState
+    }));
+    console.log(this.state)
+  }
+ 
 
   render() {
     const { name, image, description, price, oldprice, game, counter, additional } = this.props.user;
@@ -41,7 +37,8 @@ class Item extends React.Component{
             <p className="oldprice">{oldprice}</p>  
           </div> 
           {counter > 1000 && <p className="counter">Популярно! купили более {counter} раз!</p>}
-          { additional.map((add, index) => <Additional key={index} name={add.name} description={add.description} price={add.price} oldprice={add.oldprice}/>)}
+          {additional.map((add, index) => <Additional key={index} name={add.name} description={add.description} price={add.price} oldprice={add.oldprice} />)}
+          {additional.length > 2 && <button onClick={() => this.showMore()}>Показать больше</button>}
           <button onClick={() => this.deleteItem()}>Удалить</button>
         </div>
       );
