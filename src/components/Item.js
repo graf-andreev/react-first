@@ -1,10 +1,22 @@
 import React from 'react';
-import Additional from './Additional';
+import AdditionalList from './AdditionalList';
+import Modal from './Modal';
 
 class Item extends React.Component{
   constructor(props){
     super(props);
-    this.state = {isShow: true};
+    this.state = {
+      isShow: true,
+      showAll: false,
+      modalShow: false,
+    };
+    
+  }
+
+  modalShow(){
+    this.setState(prevState => ({
+      modalShow: true,
+    }));
   }
 
   deleteItem(){
@@ -17,13 +29,12 @@ class Item extends React.Component{
     this.setState(prevState => ({
       isShow: !prevState
     }));
-    console.log(this.state)
   }
  
 
   render() {
     const { name, image, description, price, oldprice, game, counter, additional } = this.props.user;
-    const { isShow } = this.state;
+    const { isShow, showAll, modalShow } = this.state;
 
     if (isShow === true){
       return (
@@ -37,9 +48,10 @@ class Item extends React.Component{
             <p className="oldprice">{oldprice}</p>  
           </div> 
           {counter > 1000 && <p className="counter">Популярно! купили более {counter} раз!</p>}
-          {additional.map((add, index) => <Additional key={index} name={add.name} description={add.description} price={add.price} oldprice={add.oldprice} />)}
-          {additional.length > 2 && <button onClick={() => this.showMore()}>Показать больше</button>}
+          <AdditionalList additional={additional} showAll={showAll}/>
           <button onClick={() => this.deleteItem()}>Удалить</button>
+          <button onClick={() => this.modalShow()}>Добавить в корзину</button>
+          {/* <Modal showModal={showModal}/> */}
         </div>
       );
     } else {
