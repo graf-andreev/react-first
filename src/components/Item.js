@@ -38,7 +38,7 @@ class Item extends React.Component{
 
     if (isShow === true){
       return (
-        <div className="item-card">
+        <div className="item-card" onClick={() => this.showPopup()}>
           <p className="item-game">{game}</p>
           <img className="item-img" src = {image} />
           <p className="item-card__header">{name}</p>  
