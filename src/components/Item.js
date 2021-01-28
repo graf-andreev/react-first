@@ -8,16 +8,16 @@ class Item extends React.Component{
     this.state = {
       isShow: true,
       showAll: false,
-      modalShow: false,
+      showModal: false,
     };
-    
   }
 
-  modalShow(){
-    this.setState(prevState => ({
-      modalShow: true,
-    }));
-  }
+
+ toggleModal(){
+  this.setState(prevState => ({
+    showModal: !prevState
+  }));
+}
 
   deleteItem(){
     this.setState(prevState => ({
@@ -30,11 +30,12 @@ class Item extends React.Component{
       isShow: !prevState
     }));
   }
- 
+
+  
 
   render() {
     const { name, image, description, price, oldprice, game, counter, additional } = this.props.user;
-    const { isShow, showAll, modalShow } = this.state;
+    const { isShow, showAll, showModal } = this.state;
 
     if (isShow === true){
       return (
@@ -50,8 +51,15 @@ class Item extends React.Component{
           {counter > 1000 && <p className="counter">Популярно! купили более {counter} раз!</p>}
           <AdditionalList additional={additional} showAll={showAll}/>
           <button onClick={() => this.deleteItem()}>Удалить</button>
-          <button onClick={() => this.modalShow()}>Добавить в корзину</button>
-          {/* <Modal showModal={showModal}/> */}
+          
+          <button onClick={this.toggleModal}>Добавить в корзину</button>
+            {showModal ? (
+                  <Modal>
+                     <p>{this.props.user.name + 'Добавлен в корзину'}</p>
+                  </Modal>
+               ) : null
+            }
+          
         </div>
       );
     } else {

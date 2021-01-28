@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ModalInfo from "./ModalInfo";
+import { createPortal } from 'react-dom';
+
+const modalRoot = document.getElementById( 'modal-root' );
 
 class Modal extends React.Component {
-  render() {
-    return ReactDOM.createPortal(
-       <ModalInfo name="Modal" />,
-      document.getElementById('root-modal'),
-    )
-  }
+   constructor( props ) {
+      super( props );
+      
+    this.element = document.createElement( 'div' );
+   }
+   
+   componentDidMount() {
+      modalRoot.appendChild( this.element );
+   }
+   componentWillUnmount() {
+      modalRoot.removeChild( this.element );
+   }
+render() {
+      return createPortal( this.props.children, this.element );
+   }
 }
-
 export default Modal;
