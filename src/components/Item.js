@@ -13,6 +13,14 @@ class Item extends React.Component{
   }
 
 
+  // toggleModal = () => {
+  //   this.setState({
+  //     showModal: !this.state.on
+  //   });
+  // };
+//  this.setState.showModal = true;
+
+
  toggleModal(){
   this.setState(prevState => ({
     showModal: !prevState
@@ -27,11 +35,9 @@ class Item extends React.Component{
 
   showMore(){
     this.setState(prevState => ({
-      isShow: !prevState
+      showAll: !prevState
     }));
   }
-
-  
 
   render() {
     const { name, image, description, price, oldprice, game, counter, additional } = this.props.user;
@@ -39,7 +45,7 @@ class Item extends React.Component{
 
     if (isShow === true){
       return (
-        <div className="item-card" onClick={() => this.showPopup()}>
+        <div className="item-card">
           <p className="item-game">{game}</p>
           <img className="item-img" src = {image} />
           <p className="item-card__header">{name}</p>  
@@ -52,10 +58,10 @@ class Item extends React.Component{
           <AdditionalList additional={additional} showAll={showAll}/>
           <button onClick={() => this.deleteItem()}>Удалить</button>
           
-          <button onClick={this.toggleModal}>Добавить в корзину</button>
+          <button onClick={() => this.toggleModal()}>Добавить в корзину</button>
             {showModal ? (
                   <Modal>
-                     <p>{this.props.user.name + 'Добавлен в корзину'}</p>
+                     <p className="popup-text">{this.props.user.name + 'Добавлен в корзину'}</p>
                   </Modal>
                ) : null
             }

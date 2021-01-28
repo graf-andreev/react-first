@@ -111,7 +111,7 @@ body{
     justify-content: center;
 }
 
-#root-modal{
+#modal-root div{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -121,11 +121,15 @@ body{
     align-items: center;
     justify-content: center;
     background-color: rgba(0,0,0,0.5);
-    display: none;
 }
 
 .additional-item{
     font-size: 11px;
     text-align: left;
     border: 1px solid #000000;
+}
+
+.popup-text{
+    font-size: 20px;
+    color: red;
 }
