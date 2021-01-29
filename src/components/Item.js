@@ -15,7 +15,7 @@ class Item extends React.Component{
 
   // toggleModal = () => {
   //   this.setState({
-  //     showModal: !this.state.on
+  //     showModal: true
   //   });
   // };
 //  this.setState.showModal = true;
