@@ -12,6 +12,15 @@ class Item extends React.Component{
     };
   }
 
+
+  // toggleModal = () => {
+  //   this.setState({
+  //     showModal: true
+  //   });
+  // };
+//  this.setState.showModal = true;
+
+
  toggleModal(){
   this.setState(prevState => ({
     showModal: !prevState.showModal
