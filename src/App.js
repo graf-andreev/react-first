@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import OfferList from './components/OfferList';
 import Wrapper from './components/Wrapper';
 
-
 class App extends React.Component{
     render() {
         return(
