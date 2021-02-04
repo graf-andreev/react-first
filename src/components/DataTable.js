@@ -17,6 +17,21 @@ export default class DataTable{
     getData(){
         return this._instance
         .get('/Table%201?')
-        .then(response => response.data);
+        .then(response => response.data)
+        .then(data => {
+            return data.records.map(row => {
+                return {
+                    id: row.id,
+                    name: row.fields.Name,
+                    additional: JSON.parse(row.fields.additional),
+                    counter: row.fields.counter,
+                    description: row.fields.description,
+                    game: row.fields.game,
+                    image: row.fields.image,
+                    price: row.fields.price,
+                    oldprice: row.fields.oldprice
+                }
+            })
+        })
     } 
 }

@@ -1,17 +1,36 @@
 import React from 'react';
 
-import offerList from '../data/offerList.json';
 import Item from "./Item";
 
 import DataTable from './DataTable';
 
-const client = new DataTable();
-client.getData()
-      .then(console.log)
-
 class OfferList extends React.Component{
-  render() {
-    return offerList.map(user => <Item key={user.name} user={user} />)
+  constructor(props){
+    super(props);
+
+    this.state ={
+        dataList: null,
+    }
+}
+
+componentDidMount(){
+  const client = new DataTable();
+  client.getData()
+        .then(data => this.setState({
+          dataList: data
+        }))
+
+}
+
+
+render() {
+    const {dataList} = this.state;
+
+    if(!dataList ){
+      return <h1>Loading</h1>
+    }
+
+    return dataList.map(user => <Item key={user.name} user={user} />)
   }
 }
 export default OfferList;
