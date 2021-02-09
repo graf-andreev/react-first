@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Item from "./Item";
 
 import DataTable from './DataTable';
@@ -29,8 +28,9 @@ render() {
     if(!dataList ){
       return <h1>Loading</h1>
     }
-
-    return dataList.map(user => <Item key={user.name} user={user} />)
+    return (
+      dataList.map(user => <Item key={user.name} user={user} />)
+      )
   }
 }
 export default OfferList;
