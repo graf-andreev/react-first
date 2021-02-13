@@ -32,7 +32,6 @@ class Wrapper extends React.Component {
               if (cloneBtn.value === value) {
                 cloneBtn.isChecked = true;
               }
-    
               return cloneBtn;
             })
           }
