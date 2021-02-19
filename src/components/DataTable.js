@@ -34,4 +34,22 @@ export default class DataTable{
             })
         })
     } 
+    getPro(){
+        return this._instance
+        .get('/Table%202')
+        .then(response => response.data)
+        .then(data => {
+            return data.records.map(row => {
+                return {
+                    id: row.id,
+                    name: row.fields.Name,
+                    winrate: row.fields.winrate,
+                    game: row.fields.game,
+                    photo: row.fields.photo,
+                    status: row.fields.status,
+                    oldprice: row.fields.oldprice
+                }
+            })
+        })
+    } 
 }

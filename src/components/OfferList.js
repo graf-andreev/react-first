@@ -30,7 +30,7 @@ render() {
     }
     return (
       dataList.map(user => <Item key={user.name} user={user} />)
-      )
+    )
   }
 }
 export default OfferList;
