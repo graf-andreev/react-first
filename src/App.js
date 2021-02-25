@@ -1,17 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import OfferList from './components/OfferList';
-import Wrapper from './components/Wrapper';
+import MainContent from './components/MainContent';
 
 class App extends React.Component{
     render() {
         return(
             <>
             <Header/>
-            <Wrapper>
-            <OfferList/>
-            </Wrapper>
+            <MainContent/>
             <Footer/>
             </>
         )

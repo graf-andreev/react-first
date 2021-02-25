@@ -29,7 +29,9 @@ render() {
       return <h1>Loading</h1>
     }
     return (
-      dataList.map(user => <Item key={user.name} user={user} />)
+      <div className="grid">
+      {dataList.map(user => <Item key={user.name} user={user} />)}
+      </div>
     )
   }
 }
