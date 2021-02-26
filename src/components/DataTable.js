@@ -30,9 +30,9 @@ export default class DataTable{
                     image: row.fields.image,
                     price: row.fields.price,
                     oldprice: row.fields.oldprice
-                }
-            })
-        })
+                };
+            });
+        });
     } 
     getPro(){
         return this._instance
@@ -42,14 +42,13 @@ export default class DataTable{
             return data.records.map(row => {
                 return {
                     id: row.id,
-                    name: row.fields.Name,
+                    name: row.fields.name,
                     winrate: row.fields.winrate,
                     game: row.fields.game,
                     photo: row.fields.photo,
-                    status: row.fields.status,
-                    oldprice: row.fields.oldprice
-                }
-            })
-        })
+                    status: row.fields.status
+                };
+            });
+        });
     } 
 }

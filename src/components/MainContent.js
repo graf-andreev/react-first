@@ -1,6 +1,7 @@
 import React from 'react';
 import TabButtons from './TabButtons';
 import OfferList from './OfferList';
+import PlayerList from './PlayerList';
 
 class MainContent extends React.Component {
     constructor(props) {
@@ -42,11 +43,12 @@ class MainContent extends React.Component {
 
     render(){
         const { buttons } = this.state;
-
+        console.log()
         return(
             <>
             <TabButtons buttons={buttons} handler={this.onChange} />
-            <OfferList/>
+            {buttons[0].isChecked && <OfferList/>}
+            {buttons[1].isChecked && <PlayerList/>}
             </>
         )
     }
