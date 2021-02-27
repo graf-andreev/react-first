@@ -29,7 +29,8 @@ export default class DataTable{
                     game: row.fields.game,
                     image: row.fields.image,
                     price: row.fields.price,
-                    oldprice: row.fields.oldprice
+                    oldprice: row.fields.oldprice,
+                    showForGuest: row.fields.showForGuest
                 };
             });
         });

@@ -1,6 +1,5 @@
 import React from 'react';
 import Item from "./Item";
-
 import DataTable from './DataTable';
 
 class OfferList extends React.Component{

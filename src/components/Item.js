@@ -1,58 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AdditionalList from './AdditionalList';
 import Modal from './Modal';
 
-class Item extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      isShow: true,
-      showAll: false,
-      showModal: false,
-    };
-  }
+const Item = (props) =>{
 
- toggleModal(){
-  this.setState(prevState => ({
-    showModal: !prevState.showModal
-  }));
-}
-
-  deleteItem(){
-    this.setState(prevState => ({
-      isShow: !prevState.isShow
-    }));
-  }
-
-  showMore(){
-    this.setState(prevState => ({
-      showAll: !prevState.showMore
-    }));
-  }
-
-  render() {
-    const { name, image, description, price, oldprice, game, counter, additional } = this.props.user;
-    const { isShow, showAll, showModal } = this.state;
+  const [isShow, setIsShow] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
     if (isShow === true){
       return (
         <div className="item-card">
-          <p className="item-game">{game}</p>
-          <img className="item-img" src = {image} />
-          <p className="item-card__header">{name}</p>  
-          <p>{description}</p>     
+          <p className="item-game">{props.user.game}</p>
+          <img className="item-img" src = {props.user.image} />
+          <p className="item-card__header">{props.user.name}</p>  
+          <p>{props.description}</p>     
           <div className="price-wrapper">
-            <p className="price">{price}</p>
-            <p className="oldprice">{oldprice}</p>  
+            <p className="price">{props.user.price}</p>
+            <p className="oldprice">{props.user.oldprice}</p>  
           </div> 
-          {counter > 1000 && <p className="counter">Популярно! купили более {counter} раз!</p>}
-          <AdditionalList additional={additional} showAll={showAll}/>
-          <button onClick={() => this.deleteItem()}>Удалить</button>
+          {props.user.counter > 1000 && <p className="counter">Популярно! купили более {props.user.counter} раз!</p>}
+          <AdditionalList additional={props.user.additional} />
+          <button onClick={() => setIsShow(!isShow)}>Удалить</button>
           
-          <button onClick={() => this.toggleModal()}>Добавить в корзину</button>
+          <button onClick={() => setShowModal(!showModal)}>Добавить в корзину</button>
             {showModal ? (
                   <Modal>
-                     <p className="popup-text">{this.props.user.name + 'Добавлен в корзину'}</p>
+                     <p className="popup-text">{props.user.name + 'Добавлен в корзину'}</p>
                   </Modal>
                ) : null
             }
@@ -64,6 +37,6 @@ class Item extends React.Component{
     }
     
   }
-}
+
 
 export default Item
