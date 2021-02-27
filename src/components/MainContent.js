@@ -43,7 +43,7 @@ class MainContent extends React.Component {
 
     render(){
         const { buttons } = this.state;
-        console.log()
+
         return(
             <>
             <TabButtons buttons={buttons} handler={this.onChange} />
@@ -52,7 +52,7 @@ class MainContent extends React.Component {
             </>
         )
     }
-
+//this.state button lfc - pwp превратить массив в 2 объекта.
 }
 
 

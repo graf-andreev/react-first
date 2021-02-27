@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from "./Item";
 import DataTable from './DataTable';
+import UserContext from './UserContext';
 
 class OfferList extends React.Component{
   constructor(props){
@@ -29,7 +30,13 @@ render() {
     }
     return (
       <div className="grid">
-      {dataList.map(user => <Item key={user.name} user={user} />)}
+        <UserContext.Consumer>
+          {
+            showForGuest => dataList
+                            .filter(item => !showForGuest || (item.showForGuest == showForGuest))
+                            .map(user => <Item key={user.name} user={user} />)
+          }
+      </UserContext.Consumer>
       </div>
     )
   }

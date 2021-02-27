@@ -6,8 +6,10 @@ const Item = (props) =>{
 
   const [isShow, setIsShow] = useState(true);
   const [showModal, setShowModal] = useState(false);
-
-    if (isShow === true){
+//if (!isShow){
+  //return null
+//}
+    if (isShow){
       return (
         <div className="item-card">
           <p className="item-game">{props.user.game}</p>
