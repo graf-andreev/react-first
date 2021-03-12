@@ -1,6 +1,6 @@
 import React from 'react';
 import Player from "./Player";
-
+import Form from './Form'
 import DataTable from './DataTable';
 
 class PlayerList extends React.Component{
@@ -26,9 +26,12 @@ render() {
       return <h1>Loading PRO</h1>
     }
     return (
+      <>
       <div className="grid">
       {dataList.map(user => <Player key={user.name} user={user} />)}
       </div>
+      <Form/>
+      </>
     )
   }
 }
