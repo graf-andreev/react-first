@@ -1,88 +1,56 @@
 import React from 'react';
 
-export default class Form extends React.Component{
-  constructor(props) {
-    super(props);
+import ServerResponse from "../ServerResponse";
+import {useForm} from "react-hook-form";
 
-    this.state = {
-      form: {
-        errors: {}
-      },
-      selectValue: "",
-      selectStatus: ""
-    }
-    this.handleDropdownChange = this.handleDropdownChange.bind(this);
-    this.handleStatusChange = this.handleStatusChange.bind(this);
-  }
+export default function UserForm() {
+    const { register, handleSubmit, errors, formState } = useForm();
+    const { isSubmitting } = formState;
 
-  handleDropdownChange(e) {
-    this.setState({ selectValue: e.target.value });
-  }
+    const onSubmit = async (data) => {
+        const requestData = {...data};
 
-  handleStatusChange(e) {
-    this.setState({ selectStatus: e.target.value });
-  }
-
-  submitHandler(event) {
-    event.preventDefault();
-
-    const elements = event.target.elements;
-
-    console.log(elements.username.value, this.state.selectValue, elements.winrate.value, this.state.selectStatus, elements.userphoto.value );
-
-    if (elements.winrate.value.length < 3) {
-      this.setState(prevState => {
-        return {
-          ...prevState,
-          form: {
-            ...prevState.form,
-            errors: {
-              ...prevState.form.errors,
-              winrate: 'Length must be greater than 6 symbols',
-            }
-          }
-        }
-      })
-
-      return null;
+        const client = new ServerResponse();
+        await client.createNewPro(requestData)
+            .then(console.log)
     }
 
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        form: {
-          ...prevState.form,
-          errors: {}
-        }
-      }
-    })
-  }
-
-  render() {
     return (
-        <div className='form-wrapper'>
-            <h2 className='form-header'>You can create your pro player here</h2>
-      <form action="#" onSubmit={(event) => this.submitHandler(event)}>
-        <label htmlFor="1">Pro player name</label>
-        <input type="text" name="username" id="1" />
-        <label htmlFor="2">Game</label>
-        <select id="2" onChange={this.handleDropdownChange} name='game'>
-            <option value="apex" key="9">Apex</option>
-            <option value="cod" key="3">COD WZ</option>
-        </select>
-        <label htmlFor="3">Pro player winrate</label>
-        <input type="number" name="winrate" id="3" />
-        { this.state.form.errors.winrate && <p style={{color: 'purple'}}>Your winrate must be greater than 3</p> }
-        <label htmlFor="online">Game</label>
-        <select id="online" onChange={this.handleStatusChange} name='status'>
-            <option value="online" key="7">Online</option>
-            <option value="online" key="8">Offline</option>
-        </select>
-        <label htmlFor="5">Pro player photo</label>
-        <input type="text" name="userphoto" id="5" />
-        <button className="submit" type="submit">Submit</button>
-      </form>
-      </div>
+        <>
+         <h2 className='form-header'>You can create your pro player here</h2>
+        <form className='form-wrapper' onSubmit={handleSubmit(onSubmit)}>
+            <div>
+                <label htmlFor="1">Pro player name</label>
+                <input id='1' type="text" name="name" ref={register({required: true})}/>
+                {errors.name && <span>This field is required</span>}
+            </div>
+            <div>
+                <label htmlFor="2">Game</label>
+                <select id="2"  ref={register({required: true})} name='game'>
+                      <option value="Apex" key="9">Apex</option>
+                      <option value="COD WZ" key="3">COD WZ</option>
+                </select>
+            </div>
+            <div>
+                <label htmlFor="3">Winrate</label>
+                <input id='3' type="number" name="winrate" ref={register({required: true, maxLength: 2})}/>
+                {errors.winrate && <span>Max value of percent - 99%</span>}
+            </div>
+            <div>
+                <label htmlFor="4">Status</label>
+                <select id="4"  ref={register({required: true})} name='status'>
+                    <option value="Online" key="99">Online</option>
+                    <option value="Offline" key="33">Offline</option>
+                    <option value="Banned" key="34">Banned</option>
+                </select>
+            </div>
+            <div>
+                <label htmlFor="5">Photo</label>
+                <input id='5' type="text" name="photo" ref={register({required: true, maxLength: 32})}/>
+                {errors.winrate && <span>This field is required</span>}
+            </div>
+            <button className="submit" type="submit" disabled={isSubmitting}>{isSubmitting ? 'Sending...' : 'Create'}</button>
+        </form>
+        </>
     );
-  }
 }

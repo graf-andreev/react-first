@@ -7,9 +7,6 @@ class PlayerList extends React.PureComponent{
 
 render() {
     const {data} = this.props;
-    if(!data ){
-      return <h1>Loading PRO</h1>
-    }
     return (
       <>
       <div className="grid">

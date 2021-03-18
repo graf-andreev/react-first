@@ -51,5 +51,16 @@ export default class ServerResponse {
                 };
             });
         });
-    } 
+    }
+    createNewPro(data) {
+        return this._instance
+            .post('/Table%202', {
+                records: [
+                    {
+                        fields: data
+                    }
+                ]
+            })
+            .then(response => response.data)
+    }
 }
